@@ -14,6 +14,7 @@ public class CartPage {
 
     By productPanel = By.className("success");
     By placeOrder = By.xpath("//*[@id=\"page-wrapper\"]/div/div[2]/button");
+    By deleteLink = By.linkText("Delete");
 
 
     public CartPage(WebDriver webDriver) {
@@ -21,13 +22,13 @@ public class CartPage {
     }
 
     public void deleteProduct(String product) {
+        WebDriverWait wait = new WebDriverWait(driver, 15);
+        wait.until(ExpectedConditions.elementToBeClickable(driver.findElement(deleteLink)));
         List<WebElement> webElementList = driver.findElements(productPanel);
         boolean found = false;
         for (WebElement element : webElementList){
-            List<WebElement> childElements = element.findElements(By.linkText(product));
-            if (childElements!=null && !childElements.isEmpty()){
-                element.findElement(By.linkText("Delete")).click();
-                WebDriverWait wait = new WebDriverWait(driver, 15);
+            if (element.getText().contains(product)){
+                element.findElement(deleteLink).click();
                 wait.until(ExpectedConditions.invisibilityOf(element));
                 found = true;
                 break;

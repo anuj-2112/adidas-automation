@@ -13,7 +13,7 @@ Feature: Demo Blaze
     When Product is added To Cart
     And Accept Pop Up
     When Navigate to Cart
-#    And Delete Dell i7 8gb from the cart
+    And Delete Dell i7 8gb from the cart
     Then Place Order
     And Enter Details into the Form
 
