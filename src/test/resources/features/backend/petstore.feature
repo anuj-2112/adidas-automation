@@ -13,7 +13,7 @@ Feature: DEMO PET STORE
   Scenario: create pet
     When Create New Pet with Random Id
       | name | photoUrls             |
-      | Tom  | Tom's wonderfulPhotos |
+      | Tom  | Tom wonderfulPhotos |
     Then Validate The Pet X is created
     When Update The Pet X status as sold
     Then Validate The Pet X has status sold

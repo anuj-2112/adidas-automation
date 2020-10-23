@@ -5,9 +5,9 @@ import org.junit.runner.RunWith;
 @RunWith(Cucumber.class)
 @CucumberOptions(
         plugin = {"pretty"},
-        features = "src/test/resources/features"
-        ,glue={"stepdefs"})
-public class BDDTest {
+        features = "src/test/resources/features/backend"
+        ,glue={"stepdefs/backend"})
+public class BackendTest {
 
 
 }

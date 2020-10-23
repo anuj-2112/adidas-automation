@@ -14,13 +14,13 @@ public class RestExecutor {
     static final Logger logger = Logger.getLogger(RestExecutor.class.getName());
     public static Response delete(String url){
         Response response = given().delete(url);
-        logger.info(url+" Response"+response.asString());
+        logger.info(url+" Response "+response.asString());
         return response;
     }
 
     public static Response create(String url, String body){
         Map<String,String> headers = new HashMap<>();
-        headers.put("content-type", "backend/application/json");
+        headers.put("content-type", "application/json");
         logger.info("Request for "+url+body);
         Response response = given().headers(headers).body(body).post(url);
         logger.info("Response for "+url+response.asString());

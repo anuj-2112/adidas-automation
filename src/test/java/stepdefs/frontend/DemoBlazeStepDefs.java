@@ -1,4 +1,4 @@
-package stepdefs;
+package stepdefs.frontend;
 
 import backend.application.Constants;
 import frontend.pages.*;

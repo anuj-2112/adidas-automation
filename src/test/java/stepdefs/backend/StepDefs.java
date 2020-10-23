@@ -1,4 +1,4 @@
-package stepdefs;
+package stepdefs.backend;
 
 import backend.application.PetContext;
 import io.cucumber.datatable.DataTable;
